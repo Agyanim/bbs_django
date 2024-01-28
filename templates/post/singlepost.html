@@ -1,0 +1,26 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    {% tailwind_css %}
+</head>
+<body>
+    <div class="bg-slate-100/50 w-[90%] mx-auto rounded-lg my-10">
+        <h2 class="p-5 text-xl font-bold">{{post.title}}</h2>
+        <p class="px-5">{{post.description}}</p>
+        <div class="p-5">
+            <p class=""><span class="font-bold">Created at: </span>{{post.created_at}}</p>
+            <p class=""><span class="font-bold">Last modified:</span> {{post.updated_at}}</p>
+            <div class="flex gap-10 my-5">
+                <a class="text-blue-600 font-bold italic hover:opacity-60" href="update/{{post.id}}">Edit post</a>
+                <a class="text-green-600 font-bold italic hover:opacity-60"href="create">New post</a>
+                <a class="text-red-600 font-bold italic hover:opacity-60" href="delete/{{post.id}}">Delete post</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Update post</title>
+		{% tailwind_css %}
+	</head>
+	<body>
+		<main class="flex flex-col items-center justify-center">
+			<h1 class="my-10 text-4xl text-blue-500">createpost.com</h1>
+			{% for message in messages %}
+			<h3>{{message}}</h3>
+			{% endfor %}
+			<form class="w-[50%]" action="{{id}}" method="POST">
+				{% csrf_token %}
+				<div class="flex flex-col gap-2 mb-5">
+					<label class="text-lg text-gray-500" for="title">Title: </label>
+					<input
+						class="text-gray-500 border border-gray-400 rounded"
+						type="text"
+						name="title"
+            value="{{post.title}}"
+          
+					/>
+				</div>
+				<div class="flex flex-col gap-2 mb-5">
+					<label class="text-lg text-gray-500" for="description"
+						>Description</label
+					>
+					<textarea
+						class="overflow-auto text-gray-500 border border-gray-400 rounded"
+						name="description"
+						rows="10"
+					>{{post.description}}</textarea>
+				</div>
+				<div class="bg-blue-600 w-[8rem] text-center rounded">
+					<input
+						class="py-2 font-bold text-white"
+						type="submit"
+						value="Update Post"
+					/>
+				</div>
+			</form>
+      <p></p>
+		</main>
+	</body>
+</html>

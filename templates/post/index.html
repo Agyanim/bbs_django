@@ -1,0 +1,28 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <main class="flex justify-center items-center h-screen">
+      <div>
+        <h1 class="text-4xl mb-5 italic text-blue-500">createpost.com</h1>
+        <div class="mb-5">
+          <h2 class="text-2xl">Welcome to createpost.com's official page</h2>
+          <p>
+            Are your intrested in creating your own post? let try by clicking
+            the link below...
+          </p>
+        </div>
+        <div class="flex gap-10">
+          <a class="italic text-blue-600 hover:opacity-60" href="create">Create post</a>
+          <a class="italic text-green-600  hover:opacity-60" href="allpost">View posts</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

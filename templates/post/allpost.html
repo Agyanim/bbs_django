@@ -1,0 +1,48 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Post</title>
+		{% tailwind_css %}
+	</head>
+	<body>
+		<main class="">
+			<h1 class="py-10 text-3xl text-center">All Post</h1>
+			<a
+				class="ml-[5rem] font-bold text-2x bg-blue-600 text-white py-2 px-4  rounded"
+				href="create"
+				>Add post</a
+			>
+			<section class="flex flex-col w-full gap-5 my-10">
+				{%for post in posts reversed %}
+				<div class="bg-slate-100/50 w-[90%] mx-auto rounded-lg">
+					<a href="{{post.id}}">
+						<h2 class="p-5 text-xl font-bold">{{post.title}}</h2>
+						<p class="px-5">{{post.description|truncatewords:20}}</p>
+						<div class="p-5">
+							<p class="">
+								<span class="font-bold">Created at: </span>{{post.created_at}}
+							</p>
+							<p class="">
+								<span class="font-bold">Last modified:</span>
+								{{post.updated_at}}
+							</p>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</section>
+			<a
+			class="ml-[5rem] font-bold text-2x bg-blue-600 text-white py-2 px-4  rounded"
+			href="create"
+			>Add post</a
+
+		
+
+		>
+		<div class="mt-[2rem]"></div>
+		</main>
+	</body>
+</html>
