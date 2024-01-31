@@ -1,15 +1,34 @@
-{% load static %}
-{% load static tailwind_tags %}
+{% load static %} {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    {% comment %}
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    {% endcomment %}
+
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-3.7.1.js' %}"
+    ></script>
     {% tailwind_css %}
-</head>
-<body>
-    <h1>Home page</h1>
-</body>
+  </head>
+  <body>
+    <h1 class="">Home page test</h1>
+    <img
+      id="pic1"
+      src="{% static 'images/pic_1.jpg' %}"
+      alt="pic_1"
+      width="150px"
+    />
+    <button id="btn1">Enter</button>
+  </body>
+  <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 </html>
