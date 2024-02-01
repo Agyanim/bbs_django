@@ -1,34 +1,15 @@
-{% load static %} {% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    {% comment %}
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    {% endcomment %}
-
-    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
-    <script
-      type="text/javascript"
-      src="{% static 'js/jquery-3.7.1.js' %}"
-    ></script>
-    {% tailwind_css %}
-  </head>
-  <body>
-    <h1 class="">Home page test</h1>
+{% extends "counsellorApp/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    <div class="ml-10">
     <img
+    class="mt-5 absolute left[10px]"
       id="pic1"
       src="{% static 'images/pic_1.jpg' %}"
       alt="pic_1"
       width="150px"
     />
-    <button id="btn1">Enter</button>
-  </body>
-  <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-</html>
+    <button class="bg-blue-600 text-white rounded px-10 py-2 mt-[20rem]" id="btn1">Enter</button>
+    </div>
+    {% endblock content %}
