@@ -21,9 +21,13 @@
     {% tailwind_css %}
   </head>
   <body>
-    {% block navigation %}
-    <div>
-      <h1>navigation</h1>
+    {% block navigation  %}
+    <div class="bg-red-500 text-white">
+      {% for list in lists  %}
+      
+      <h1 class="">try {{list}}</h1>
+        
+      {% endfor %}
     </div>
 
     {% endblock navigation %} {% block content %}{% endblock content %}
